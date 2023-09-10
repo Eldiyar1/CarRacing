@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Review</title>
+</head>
+<body>
+<center>
+    <h1>Оставить отзыв</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+            <input type="hidden" name="car_id" value="{{ object.id }}">
+        <button type="submit">Оставить отзыв</button>
+    </form>
+</center>
+</body>
+</html>

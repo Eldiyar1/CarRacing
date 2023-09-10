@@ -1,0 +1,59 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1f4068; /* Темный цвет фона */
+    color: #fff; /* Белый цвет текста */
+}
+
+/* Стили для центрирования контента */
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Стили для формы */
+.form-container {
+    background-color: #2e294e; /* Цвет фона контейнера формы */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px; /* Ширина формы */
+}
+
+.form-container h1 {
+    color: #ffc371; /* Оранжевый цвет заголовка */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border: 1px solid #ffc371; /* Оранжевая рамка вокруг полей */
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    color: #fff; /* Белый цвет текста */
+    background-color: #2e294e; /* Цвет фона полей */
+}
+
+.form-control::placeholder {
+    color: #aaa; /* Серый цвет плейсхолдера */
+    font-style: italic;
+}
+
+.form-btn {
+    background-color: #ff5f6d; /* Красный цвет кнопки */
+    color: #fff; /* Белый цвет текста на кнопке */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.form-btn:hover {
+    background-color: #ff2e63; /* Темнорозовый цвет кнопки при наведении */
+}

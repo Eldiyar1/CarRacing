@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CarRacing</title>
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+</head>
+<body>
+<center>
+    {% include 'header.html' %}
+    <br>
+    <div class="car-details-container">
+        <h2 class="car-brand">{{ object.brand }}</h2>
+        <p class="car-model">{{ object.model }}</p>
+        <img src="{{ object.images.url }}" alt="cars" class="car-image">
+        <p><a href="/cars/" class="back-button">Вернуться назад</a></p>
+        <div class="car-info">
+            <p><b>Описание:</b> {{ object.description }}</p>
+            <p><b>Год выпуска:</b> {{ object.year }}</p>
+            <p><b>Категория:</b> {{ object.category }}</p>
+            <p><b>Тип кузова:</b> {{ object.body_type }}</p>
+            <p><b>Тип коробки передач:</b> {{ object.transmission }}</p>
+            <p><b>Руль:</b> {{ object.steering }}</p>
+            <p><b>Тип привода:</b> {{ object.drive_type }}</p>
+            <p><b>Тип топлива:</b> {{ object.fuel_type }}</p>
+            <p><b>Цвет:</b> {{ object.color }}</p>
+            <p><b>Вместимость пассажиров:</b> {{ object.passenger }}</p>
+            <p><b>Состояние автомобиля:</b> {{ object.condition }}</p>
+            <p><b>Расход топлива на 100км:</b> {{ object.fuel_consumption }}</p>
+            <p><b>Внутренние удобства:</b> {{ object.amenities }}</p>
+            <p><b>Система безопасности:</b> {{ object.safety }}</p>
+            <p><b>Валюта:</b> {{ object.currency }}</p>
+            <p><b>Стоимость:</b> {{ object.rental_price }}</p>
+            <p><b>Дата создания:</b> {{ object.created_date }}</p>
+            <div class="car-video">
+                <iframe src="{{ object.video }}" frameborder="0" width="640" height="360"></iframe>
+            </div>
+            <table class="reviews-table">
+                <thead>
+                <tr>
+                    <th>Пользователь</th>
+                    <th>Авто</th>
+                    <th>Отзыв</th>
+                    <th>Дата</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for review in object.reviews.all %}
+                    <tr>
+                        <td>{{ review.user }}</td>
+                        <td>{{ review.car }}</td>
+                        <td>{{ review.comment }}</td>
+                        <td>{{ review.date_added }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <br><br><br>
+            <button><a href="/cars/{{ object.id }}/update">Изменить данные</a></button>
+            <button><a href="/cars/{{ object.id }}/delete">Удалить авто</a></button>
+            <button><a href="/add_review/{{ object.id }}">Оставить отзыв</a></button>
+            <br><br>
+            {% include 'footer.html' %}
+</center>
+</body>
+</html>

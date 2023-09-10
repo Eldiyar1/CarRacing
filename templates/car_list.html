@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>CarRacing</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+{% include 'header.html' %}
+<center>
+    <br>
+    <h1 class="color-white">CarRacing</h1>
+    <br>
+    <div class="card-container">
+        {% for car in object_list %}
+        <div class="card">
+            <img src="{{ car.images.url }}" class="img" alt="cars" height="200" width="475">
+            <div class="card-body">
+                <h5 class="card-title">{{ car.brand }} {{ car.model }}</h5>
+                <p class="card-text">{{ car.rental_price }} {{ car.currency }}</p>
+                <a href="/cars/{{ car.id }}" class="btn btn-primary">Подробнее</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <br><br><br><br>
+{% include 'footer.html' %}
+</center>
+</body>
+</html>

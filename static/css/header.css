@@ -1,0 +1,58 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.bg-body-tertiary {
+    background-color: #f0f0f0; /* Измените на нужный вам цвет */
+}
+
+.navbar {
+    padding: 10px 0;
+}
+
+.navbar-brand img {
+    margin-left: 20px; /* Добавьте отступ слева, чтобы изображение не прилипало к левому краю */
+}
+
+/* Стили для навигационного меню */
+.navbar-nav .nav-link {
+    color: #333;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #1e72d0;
+}
+
+/* Стили для поисковой строки */
+.form-control {
+    border-color: #1e72d0;
+}
+
+.btn-outline-success {
+    border-color: #1e72d0;
+    color: #1e72d0;
+}
+
+.btn-outline-success:hover {
+    background-color: #1e72d0;
+    color: white;
+}
+
+/* Стили для выпадающего меню */
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    color: #333;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+    color: #1e72d0;
+}
